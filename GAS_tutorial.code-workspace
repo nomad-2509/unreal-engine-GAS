@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"name": "GAS_tutorial",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "D:\\UNREAL ENGINE\\UE_5.2"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	}
+}
