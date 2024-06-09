@@ -18,7 +18,9 @@ ABASE_CHAR::ABASE_CHAR()
 void ABASE_CHAR::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	initialize_ability_system();
+
 }
 
 void ABASE_CHAR::OnRep_PlayerState()
@@ -65,5 +67,61 @@ void ABASE_CHAR::PossessedBy(AController * NewController)
 
 		player_state_->GetAbilitySystemComponent()->InitAbilityActorInfo(player_state_, this);
 	}
+
+}
+
+void ABASE_CHAR::initialize_ability_system()
+{
+	apply_initial_effects();
+	give_initial_abilities();
+}
+
+void ABASE_CHAR::apply_initial_effects()
+{
+	FPredictionKey pred_key_;
+
+	if (applied_initial_effects) return;	// Initial effects were already applied
+
+	if (GetLocalRole() != ROLE_Authority) return;		// Can be applied only on Server
+
+	for (auto & effect_class_ : initial_effect_container)
+	{
+		if (!(effect_class_ && effect_class_.Get()))	// Return if not valid GE class, hence, not initialized
+			return;
+
+		FGameplayEffectSpecHandle effect_spec_handle_ = ability_system_component->MakeOutgoingSpec(
+			effect_class_,
+			1.0f,
+			ability_system_component->MakeEffectContext()
+		);
+
+		ability_system_component->ApplyGameplayEffectSpecToSelf(
+			*effect_spec_handle_.Data.Get(),
+			pred_key_
+		);
+	}
+
+	applied_initial_effects = true;
+
+}
+
+void ABASE_CHAR::give_initial_abilities()
+{
+	if (given_initial_abilities) return;	// Initial abilities were already given
+
+	if (GetLocalRole() != ROLE_Authority) return;		// Giving abilities only on server
+
+	for (auto & ability_pair_ : initial_ability_container)
+	{
+		if (!(ability_pair_.Value && ability_pair_.Value.Get())) return;	// Return if invalid ability class, hence, not initialized
+
+		FGameplayAbilitySpec ability_spec_ = FGameplayAbilitySpec(ability_pair_.Value, 1.f);
+
+		ability_system_component->GiveAbility(
+			ability_spec_
+		);
+	}
+
+	given_initial_abilities = true;
 
 }

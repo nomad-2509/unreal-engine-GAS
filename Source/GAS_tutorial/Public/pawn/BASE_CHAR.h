@@ -56,6 +56,7 @@ public:
 	virtual UAbilitySystemComponent * GetAbilitySystemComponent() const
 	{ return ability_system_component; };
 
+	virtual void initialize_ability_system();
 
 // ============
 // ATTRIBUTE SETS
@@ -80,5 +81,39 @@ protected:
 
 	UBATTLE_attribute_set * get_BATTLE_attribute_set()
 	{ return BATTLE_attribute_set; };
+
+
+// ============
+// EFFECTS
+
+// Properties
+public:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "ABILITY_SYSTEM|EFFECTS")
+	TArray< TSubclassOf<UGameplayEffect> > initial_effect_container;
+
+	bool applied_initial_effects = false;
+
+// Methods
+protected:
+	virtual void apply_initial_effects();
+
+
+// ============
+// ABILITIES
+
+// Properties
+public:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "ABILITY_SYSTEM|ABILITIES")
+	TMap<
+		FGameplayTag,
+		TSubclassOf<UGameplayAbility>
+	> initial_ability_container;
+
+	bool given_initial_abilities = false;
+
+// Methods
+protected:
+	virtual void give_initial_abilities();
+
 
 };

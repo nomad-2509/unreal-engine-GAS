@@ -6,9 +6,9 @@
 
 UCORE_attribute_set::UCORE_attribute_set()
 {
-	Initstrength(100.f);
-	Initagility(100.f);
-	Initintelligence(100.f);
+	Initstrength(20.f);
+	Initagility(25.f);
+	Initintelligence(15.f);
 
 	Initmax_strength(300.f);
 	Initmax_agility(300.f);
