@@ -83,3 +83,7 @@ enc_temp_folder
 
 ####
 .vsconfig
+
+# ==========
+
+Content/Weapon_Pack/*

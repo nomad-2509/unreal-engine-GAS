@@ -9,6 +9,4 @@ void Ubase_asset_manager::StartInitialLoading()
 {
 	Super::StartInitialLoading();
 	UAbilitySystemGlobals::Get().InitGlobalData();
-
-	UE_LOG(LogTemp, Warning, TEXT("----------- Hello world -------------"));
 }

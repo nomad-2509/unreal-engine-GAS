@@ -1,0 +1,39 @@
+[
+	{
+		"Name": "state.pawn.silence",
+		"Tag": "state.pawn.silence",
+		"DevComment": "Prevents casting ACTIVE abilities."
+	},
+	{
+		"Name": "state.pawn.disarm",
+		"Tag": "state.pawn.disarm",
+		"DevComment": "Prevents basic attack and block."
+	},
+	{
+		"Name": "state.pawn.root",
+		"Tag": "state.pawn.root",
+		"DevComment": "Prevents ANY kind of movement."
+	},
+
+	{
+		"Name": "state.pawn.stun",
+		"Tag": "state.pawn.stun",
+		"DevComment": "Intersection of Silence, Disarm and Root. Most powerful disable."
+	},
+	{
+		"Name": "state.pawn.mute",
+		"Tag": "state.pawn.mute",
+		"DevComment": "Prevents casting ACTIVE items."
+	},
+	{
+		"Name": "state.pawn.break",
+		"Tag": "state.pawn.break",
+		"DevComment": "Prevents activation or performing of PASSIVE abilities."
+	},
+
+	{
+		"Name": "state.pawn.invincible",
+		"Tag": "state.pawn.invincible",
+		"DevComment": "State during which no harm is possible!"
+	}
+]

@@ -1,0 +1,42 @@
+[
+	{
+		"Name": "combat.attack",
+		"Tag": "combat.attack",
+		"DevComment": "Basic attack"
+	},
+	{
+		"Name": "combat.melee.hit",
+		"Tag": "combat.melee.hit",
+		"DevComment": "When melee hit has occurred on ANY actor."
+	},
+	{
+		"Name": "combat.range.fire",
+		"Tag": "combat.range.fire",
+		"DevComment": "Projectile being fired."
+	},
+	{
+		"Name": "combat.range.hit",
+		"Tag": "combat.range.hit",
+		"DevComment": "Projectile hitting ANY actor."
+	},
+	{
+		"Name": "combat.block.parry",
+		"Tag": "combat.block.parry",
+		"DevComment": "Small window of time during block that deflects (parries) enemy attack."
+	},
+	{
+		"Name": "combat.dodge.reset",
+		"Tag": "combat.dodge.reset",
+		"DevComment": "Reset the number of dodges."
+	},
+	{
+		"Name": "combat.dodge.perfect",
+		"Tag": "combat.dodge.perfect",
+		"DevComment": "Small window of time during dodge where you evade ANY attack (invincible)."
+	},
+	{
+		"Name": "combat.jump.reset",
+		"Tag": "combat.jump.reset",
+		"DevComment": "Reset the number of jumps."
+	}
+]
