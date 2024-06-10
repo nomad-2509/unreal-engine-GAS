@@ -1,0 +1,12 @@
+[
+	{
+		"Name": "movement.jump.reset",
+		"Tag": "movement.jump.reset",
+		"DevComment": "To reset the number of jumps"
+	},
+	{
+		"Name": "movement.sprint",
+		"Tag": "movement.sprint",
+		"DevComment": "To sprint/dash at higher speed"
+	}
+]

@@ -16,6 +16,7 @@ class Ubase_player_state;
 class UBASE_attribute_set;
 class UCORE_attribute_set;
 class UBATTLE_attribute_set;
+class UCOMMON_attribute_set;
 
 
 UCLASS()
@@ -49,6 +50,7 @@ public:
 
 // Properties
 protected:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "GAMEPLAY_ABILITY_SYSTEM")
 	UAbilitySystemComponent * ability_system_component;
 
 // Methods
@@ -72,6 +74,10 @@ protected:
 	UPROPERTY()
 	UBATTLE_attribute_set * BATTLE_attribute_set;
 
+	UPROPERTY()
+	UCOMMON_attribute_set * COMMON_attribute_set;
+
+
 // Methods
 	UBASE_attribute_set * get_BASE_attribute_set()
 	{ return BASE_attribute_set; };
@@ -81,6 +87,9 @@ protected:
 
 	UBATTLE_attribute_set * get_BATTLE_attribute_set()
 	{ return BATTLE_attribute_set; };
+
+	UCOMMON_attribute_set * get_COMMON_attribute_set()
+	{ return COMMON_attribute_set; };
 
 
 // ============

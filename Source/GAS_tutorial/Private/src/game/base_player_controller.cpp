@@ -26,8 +26,8 @@ void Abase_player_controller::SetupInputComponent()
 	if (UEnhancedInputComponent * EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(InputComponent))
 	{
 		// Jumping
-		EnhancedInputComponent->BindAction(input_action_jump, ETriggerEvent::Triggered, this, &Abase_player_controller::__jump);
-		EnhancedInputComponent->BindAction(input_action_jump, ETriggerEvent::Completed, this, &Abase_player_controller::__stop_jump);
+		// EnhancedInputComponent->BindAction(input_action_jump, ETriggerEvent::Triggered, this, &Abase_player_controller::__jump);
+		// EnhancedInputComponent->BindAction(input_action_jump, ETriggerEvent::Completed, this, &Abase_player_controller::__stop_jump);
 
 		// Moving
 		EnhancedInputComponent->BindAction(input_action_move, ETriggerEvent::Triggered, this, &Abase_player_controller::move);

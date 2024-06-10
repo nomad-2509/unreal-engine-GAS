@@ -58,12 +58,12 @@ protected:
 
 	// Temporary methods
 	// Will create a Jump ability
-	void __jump()
-	{ if (Cast<ACharacter>(GetPawn()))
-		Cast<ACharacter>(GetPawn())->Jump(); };
+	// void __jump()
+	// { if (Cast<ACharacter>(GetPawn()))
+	// 	Cast<ACharacter>(GetPawn())->Jump(); };
 
-	void __stop_jump()
-	{ if (Cast<ACharacter>(GetPawn()))
-		Cast<ACharacter>(GetPawn())->StopJumping(); };
+	// void __stop_jump()
+	// { if (Cast<ACharacter>(GetPawn()))
+	// 	Cast<ACharacter>(GetPawn())->StopJumping(); };
 
 };

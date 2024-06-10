@@ -6,6 +6,7 @@
 #include "ability_system/attributes/BASE_attribute_set.h"
 #include "ability_system/attributes/CORE_attribute_set.h"
 #include "ability_system/attributes/BATTLE_attribute_set.h"
+#include "ability_system/attributes/COMMON_attribute_set.h"
 
 AMINION::AMINION()
 {
@@ -19,6 +20,7 @@ AMINION::AMINION()
 	BASE_attribute_set = CreateDefaultSubobject<UBASE_attribute_set>(TEXT("BASE_attribute_set"));
 	CORE_attribute_set = CreateDefaultSubobject<UCORE_attribute_set>(TEXT("CORE_attribute_set"));
 	BATTLE_attribute_set = CreateDefaultSubobject<UBATTLE_attribute_set>(TEXT("BATTLE_attribute_set"));
+	COMMON_attribute_set = CreateDefaultSubobject<UCOMMON_attribute_set>(TEXT("COMMON_attribute_set"));
 
 }
 

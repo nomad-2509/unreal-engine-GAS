@@ -38,10 +38,5 @@
 		"Name": "combat.dodge.perfect",
 		"Tag": "combat.dodge.perfect",
 		"DevComment": "Small window of time during dodge where you evade ANY attack (invincible)."
-	},
-	{
-		"Name": "combat.jump.reset",
-		"Tag": "combat.jump.reset",
-		"DevComment": "Reset the number of jumps."
 	}
 ]
