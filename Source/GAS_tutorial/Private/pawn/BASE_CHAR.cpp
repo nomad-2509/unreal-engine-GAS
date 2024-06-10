@@ -19,8 +19,6 @@ void ABASE_CHAR::BeginPlay()
 {
 	Super::BeginPlay();
 
-	initialize_ability_system();
-
 }
 
 void ABASE_CHAR::OnRep_PlayerState()
@@ -36,6 +34,8 @@ void ABASE_CHAR::OnRep_PlayerState()
 
 		// Intended to initialize for AI characters. Re-initializing does not cause problems.
 		player_state_->GetAbilitySystemComponent()->InitAbilityActorInfo(player_state_, this);
+
+		initialize_ability_system();
 	}
 
 }
@@ -66,6 +66,8 @@ void ABASE_CHAR::PossessedBy(AController * NewController)
 		ability_system_component = player_state_->GetAbilitySystemComponent();
 
 		player_state_->GetAbilitySystemComponent()->InitAbilityActorInfo(player_state_, this);
+
+		initialize_ability_system();
 	}
 
 }

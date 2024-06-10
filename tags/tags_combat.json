@@ -25,6 +25,11 @@
 		"DevComment": "Small window of time during block that deflects (parries) enemy attack."
 	},
 	{
+		"Name": "combat.block.end",
+		"Tag": "combat.block.end",
+		"DevComment": "Ending the block ability."
+	},
+	{
 		"Name": "combat.dodge.reset",
 		"Tag": "combat.dodge.reset",
 		"DevComment": "Reset the number of dodges."

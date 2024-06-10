@@ -28,4 +28,6 @@ void AMINION::BeginPlay()
 
 	if (ability_system_component) ability_system_component->InitAbilityActorInfo(this, this);
 
+	initialize_ability_system();
+
 }
