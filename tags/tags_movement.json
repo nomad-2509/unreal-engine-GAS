@@ -10,6 +10,11 @@
 		"DevComment": "Sprint/Dash at higher speed"
 	},
 	{
+		"Name": "movement.dash.end",
+		"Tag": "movement.dash.end",
+		"DevComment": "Exclusive tag for Dash Movement and ending dash activity"
+	},
+	{
 		"Name": "movement.sprint.end",
 		"Tag": "movement.sprint.end",
 		"DevComment": "To end sprint/dash ability or operation"

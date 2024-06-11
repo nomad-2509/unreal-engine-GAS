@@ -39,6 +39,9 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	class UInputAction* input_action_look;
 
+	float movement_x;
+	float movement_y;
+
 // Methods
 protected:
 	virtual void BeginPlay() override;
@@ -65,5 +68,11 @@ protected:
 	// void __stop_jump()
 	// { if (Cast<ACharacter>(GetPawn()))
 	// 	Cast<ACharacter>(GetPawn())->StopJumping(); };
+
+	UFUNCTION(BlueprintPure, Category="PLAYER_CONTROLLER|Movement")
+	float get_movement_x() { return movement_x; }
+
+	UFUNCTION(BlueprintPure, Category="PLAYER_CONTROLLER|Movement")
+	float get_movement_y() { return movement_y; }
 
 };

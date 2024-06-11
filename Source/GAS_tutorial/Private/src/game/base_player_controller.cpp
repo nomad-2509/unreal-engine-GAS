@@ -69,6 +69,10 @@ void Abase_player_controller::move(const FInputActionValue & Value)
 	// add movement 
 	GetPawn()->AddMovementInput(ForwardDirection, MovementVector.Y);
 	GetPawn()->AddMovementInput(RightDirection, MovementVector.X);
+
+	movement_x = MovementVector.Y;
+	movement_y = MovementVector.X;
+
 }
 
 void Abase_player_controller::look(const FInputActionValue & Value)
