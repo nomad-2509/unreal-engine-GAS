@@ -38,5 +38,10 @@
 		"Name": "combat.dodge.perfect",
 		"Tag": "combat.dodge.perfect",
 		"DevComment": "Small window of time during dodge where you evade ANY attack (invincible)."
+	},
+	{
+		"Name": "combat.dodge.cooldown",
+		"Tag": "combat.dodge.cooldown",
+		"DevComment": "Cooldown tag for dodge"
 	}
 ]
