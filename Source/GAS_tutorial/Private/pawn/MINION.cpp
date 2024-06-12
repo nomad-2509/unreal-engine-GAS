@@ -8,7 +8,13 @@
 #include "ability_system/attributes/BATTLE_attribute_set.h"
 #include "ability_system/attributes/COMMON_attribute_set.h"
 
-AMINION::AMINION()
+#include "utils/base_char_movement_component.h"
+
+AMINION::AMINION(const class FObjectInitializer& ObjectInitializer) :
+	Super(
+		ObjectInitializer.SetDefaultSubobjectClass<Ubase_char_movement_component>
+			(ACharacter::CharacterMovementComponentName)
+	)
 {
 	// Ability System Component
 	ability_system_component = CreateDefaultSubobject<UAbilitySystemComponent>(TEXT("AbilitySystemComponent"));

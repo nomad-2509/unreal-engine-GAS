@@ -15,7 +15,7 @@ class GAS_TUTORIAL_API AMINION : public ABASE_CHAR
 	GENERATED_BODY()
 
 public:
-	AMINION();
+	AMINION(const class FObjectInitializer& ObjectInitializer);
 
 protected:
 	virtual void BeginPlay() override;

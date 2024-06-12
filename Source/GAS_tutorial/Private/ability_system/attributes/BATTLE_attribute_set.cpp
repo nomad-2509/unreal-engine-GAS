@@ -9,11 +9,11 @@ UBATTLE_attribute_set::UBATTLE_attribute_set()
 	Initmax_armor(100.f);
 	Initmax_magic_resist(100.f);
 
-	// Initmax_movement_speed(100.f);
+	Initmax_movement_speed(2000.f);
 	Initmax_attack_speed(500.f);
 
 	// Setting the default values
-	Initmovement_speed(100.f);
+	Initmovement_speed(600.f);
 	Initattack_speed(100.f);
 
 	Initcooldown_reduction(100.f);
@@ -31,18 +31,22 @@ void UBATTLE_attribute_set::PreAttributeChange(const FGameplayAttribute & attrib
 	else if (attribute == Getmagic_resistAttribute())
 		new_value = FMath::Clamp(new_value, 0.f, Getmax_magic_resist());
 
-	/*
-		To clamp movement speed, we must fetch the Character Movement Component
-		And compare with its movement speed.
-	*/
-	else if (attribute == Getmovement_speedAttribute())
-	{
-		float char_movt_speed_ = 500.f;		// get character movement speed from character movement component
+	// /*
+	// 	To clamp movement speed, we must fetch the Character Movement Component
+	// 	And compare with its movement speed.
+	// */
+	// else if (attribute == Getmovement_speedAttribute())
+	// {
+	// 	float char_movt_speed_ = 500.f;		// get character movement speed from character movement component
 
-		new_value = (char_movt_speed_ >= 3000.f)
-			? Getmovement_speed()
-			: new_value;
-	}
+	// 	new_value = (char_movt_speed_ >= 3000.f)
+	// 		? Getmovement_speed()
+	// 		: new_value;
+	// }
+
+	// Movement Speed Attribute is now the direct character movement speed
+	else if (attribute == Getmovement_speedAttribute())
+		new_value = FMath::Clamp(new_value, 0.f, Getmax_movement_speed());
 
 	else if (attribute == Getattack_speedAttribute())
 		new_value = FMath::Clamp(new_value, 0.f, Getmax_attack_speed());

@@ -26,7 +26,8 @@ class GAS_TUTORIAL_API ABASE_CHAR : public ACharacter, public IAbilitySystemInte
 
 public:
 	// Sets default values for this character's properties
-	ABASE_CHAR();
+	// ABASE_CHAR();
+	ABASE_CHAR(const class FObjectInitializer& ObjectInitializer);
 
 protected:
 	// Called when the game starts or when spawned

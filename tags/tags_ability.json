@@ -1,0 +1,22 @@
+[
+	{
+		"Name": "ability.slot.1",
+		"Tag": "ability.slot.1",
+		"DevComment": "Ability equipped at slot 1"
+	},
+	{
+		"Name": "ability.slot.2",
+		"Tag": "ability.slot.2",
+		"DevComment": "Ability equipped at slot 2"
+	},
+	{
+		"Name": "ability.slot.3",
+		"Tag": "ability.slot.3",
+		"DevComment": "Ability equipped at slot 3"
+	},
+	{
+		"Name": "ability.slot.ultimate",
+		"Tag": "ability.slot.ultimate",
+		"DevComment": "Ability equipped at the ultimate slot"
+	}
+]

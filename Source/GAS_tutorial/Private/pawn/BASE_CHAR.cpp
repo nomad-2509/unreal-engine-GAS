@@ -4,10 +4,14 @@
 #include "pawn/BASE_CHAR.h"
 
 #include "src/game/base_player_state.h"
-
+#include "utils/base_char_movement_component.h"
 
 // Sets default values
-ABASE_CHAR::ABASE_CHAR()
+ABASE_CHAR::ABASE_CHAR(const class FObjectInitializer& ObjectInitializer) :
+	Super(
+		ObjectInitializer.SetDefaultSubobjectClass<Ubase_char_movement_component>
+			(ACharacter::CharacterMovementComponentName)
+	)
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;

@@ -37,7 +37,7 @@ class GAS_TUTORIAL_API UBATTLE_attribute_set : public UAttributeSet
 		max_magic_resist
 		magic_resist_meta			// META
 
-		movement_speed - Percentage factor of character movement speed; min - 0% (immobile); max - 3000 u/s
+		movement_speed - In-game character movement speed; min - 0 u/s ; max - 2000 u/s
 		max_movement_speed
 		movement_speed_meta			// META
 		attack_speed - Percentage factor of character animation play rate; min - 0% (immobile), max - 500%
