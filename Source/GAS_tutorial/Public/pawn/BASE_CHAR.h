@@ -9,6 +9,9 @@
 #include "AbilitySystemBlueprintLibrary.h"
 #include "AbilitySystemInterface.h"
 
+// UI
+#include "Components/WidgetComponent.h"
+
 #include "BASE_CHAR.generated.h"
 
 class Ubase_player_state;
@@ -46,6 +49,7 @@ public:
 	// Only called on the Server. Calls before Server's AcknowledgePossession.
 	virtual void PossessedBy(AController* NewController) override;
 
+
 // ============
 // ABILITY SYSTEM COMPONENT
 
@@ -60,6 +64,7 @@ public:
 	{ return ability_system_component; };
 
 	virtual void initialize_ability_system();
+
 
 // ============
 // ATTRIBUTE SETS
@@ -125,5 +130,19 @@ public:
 protected:
 	virtual void give_initial_abilities();
 
+
+// =============
+// UI
+
+// Properties
+	bool widgets_initialized = false;
+
+// Methods
+protected:
+	UFUNCTION(BlueprintCallable, Category="CHARACTER|UI")
+	virtual void initialize_widgets();
+
+	UFUNCTION(BlueprintCallable, Category="CHARACTER|UI")
+	virtual void initialize_HUD();
 
 };

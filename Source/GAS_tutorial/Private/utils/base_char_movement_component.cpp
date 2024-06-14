@@ -9,6 +9,22 @@
 #include "AbilitySystemBlueprintLibrary.h"
 #include "ability_system/attributes/BATTLE_attribute_set.h"
 
+
+void Ubase_char_movement_component::UpdateCharacterStateBeforeMovement(float DeltaSeconds)
+{
+	Super::UpdateCharacterStateBeforeMovement(DeltaSeconds);
+
+	if (
+		UAbilitySystemComponent * ASC_ = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetOwner())
+	)
+		// if NOT (stunned OR rooted), rotate by controller
+		bUseControllerDesiredRotation = !(
+			ASC_->HasMatchingGameplayTag(FGameplayTag::RequestGameplayTag("state.pawn.root")) || 
+			ASC_->HasMatchingGameplayTag(FGameplayTag::RequestGameplayTag("state.pawn.stun")) 
+		);
+
+}
+
 float Ubase_char_movement_component::GetMaxSpeed() const
 {
 	UAbilitySystemComponent * ASC_ = UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetOwner());

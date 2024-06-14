@@ -83,6 +83,7 @@ enc_temp_folder
 
 ####
 .vsconfig
+*.code-workspace
 
 # ==========
 

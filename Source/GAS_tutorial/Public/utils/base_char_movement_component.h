@@ -15,6 +15,8 @@ class GAS_TUTORIAL_API Ubase_char_movement_component : public UCharacterMovement
 	GENERATED_BODY()
 
 public:
+	virtual void UpdateCharacterStateBeforeMovement(float DeltaSeconds);
+	
 	virtual float GetMaxSpeed() const override;
 
 };
