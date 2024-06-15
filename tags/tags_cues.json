@@ -13,5 +13,10 @@
 		"Name": "GameplayCue.root",
 		"Tag": "GameplayCue.root",
 		"DevComment": "On being rooted"
+	},
+	{
+		"Name": "GameplayCue.blink",
+		"Tag": "GameplayCue.blink",
+		"DevComment": "Cue for blinking abilities"
 	}
 ]

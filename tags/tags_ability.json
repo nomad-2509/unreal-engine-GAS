@@ -18,5 +18,16 @@
 		"Name": "ability.slot.ultimate",
 		"Tag": "ability.slot.ultimate",
 		"DevComment": "Ability equipped at the ultimate slot"
+	},
+
+	{
+		"Name": "ability.target.targetting",
+		"Tag": "ability.target.targetting",
+		"DevComment": "Ability is being targetted."
+	},
+	{
+		"Name": "ability.target.confirm",
+		"Tag": "ability.target.confirm",
+		"DevComment": "Ability target has been confirmed."
 	}
 ]

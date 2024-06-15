@@ -18,5 +18,10 @@
 		"Name": "movement.sprint.end",
 		"Tag": "movement.sprint.end",
 		"DevComment": "To end sprint/dash ability or operation"
+	},
+	{
+		"Name": "movement.blink",
+		"Tag": "movement.blink",
+		"DevComment": "Blinks in space from one location to another"
 	}
 ]
