@@ -13,7 +13,7 @@ UBATTLE_attribute_set::UBATTLE_attribute_set()
 	Initmax_attack_speed(500.f);
 
 	// Setting the default values
-	Initarmor(10.f);			// 10% armor
+	Initarmor(20.f);			// 10% armor
 	Initmagic_resist(10.f);		// 10% magic resist
 
 	Initmovement_speed(600.f);

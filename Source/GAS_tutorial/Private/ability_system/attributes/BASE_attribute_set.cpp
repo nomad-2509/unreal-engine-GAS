@@ -3,6 +3,8 @@
 
 #include "ability_system/attributes/BASE_attribute_set.h"
 
+#include "ability_system/attributes/BATTLE_attribute_set.h"
+
 
 UBASE_attribute_set::UBASE_attribute_set()
 {
@@ -26,9 +28,165 @@ void UBASE_attribute_set::PreAttributeChange(const FGameplayAttribute & attribut
 
 }
 
+bool UBASE_attribute_set::PreGameplayEffectExecute(FGameplayEffectModCallbackData & Data)
+{
+	Super::PreGameplayEffectExecute(Data);
+
+	if (Data.EvaluatedData.Attribute == Gethealth_metaAttribute())
+	{
+		const UBATTLE_attribute_set * battle_attr_set_ = Cast<UBATTLE_attribute_set>(
+			GetOwningAbilitySystemComponent()
+				->GetAttributeSet(UBATTLE_attribute_set::StaticClass())
+		);
+
+		if (!battle_attr_set_) return false;
+
+		FGameplayTagContainer asset_tags_;
+
+		Data.EffectSpec.GetAllAssetTags(asset_tags_);
+
+		// Refine the physical damage damage to be received
+		if (
+			asset_tags_
+				.HasTagExact(
+					FGameplayTag::RequestGameplayTag("damage.type.physical")
+				)
+		)
+			Data.EvaluatedData.Magnitude = Data.EvaluatedData.Magnitude * (100 - battle_attr_set_->Getarmor()) / 100;
+
+		// Refine the magical damage damage to be received
+		else if (
+			asset_tags_
+				.HasTagExact(
+					FGameplayTag::RequestGameplayTag("damage.type.magical")
+				)
+		)
+			Data.EvaluatedData.Magnitude = Data.EvaluatedData.Magnitude * (100 - battle_attr_set_->Getmagic_resist()) / 100;
+
+		// else, do nothing, since pure damage is not blocked by magic_resist or armor
+
+		// else
+			// Data.EvaluatedData.Magnitude = Data.EvaluatedData.Magnitude;
+
+	}
+
+	if (Data.EvaluatedData.Attribute == Getmana_metaAttribute())
+	{
+		const UBATTLE_attribute_set * battle_attr_set_ = Cast<UBATTLE_attribute_set>(
+			GetOwningAbilitySystemComponent()
+				->GetAttributeSet(UBATTLE_attribute_set::StaticClass())
+		);
+
+		if (!battle_attr_set_) return false;
+
+		FGameplayTagContainer asset_tags_;
+
+		Data.EffectSpec.GetAllAssetTags(asset_tags_);
+
+		// Refine the physical damage damage to be received
+		if (
+			asset_tags_
+				.HasTagExact(
+					FGameplayTag::RequestGameplayTag("damage.type.physical")
+				)
+		)
+			Data.EvaluatedData.Magnitude = Data.EvaluatedData.Magnitude * (100 - battle_attr_set_->Getarmor()) / 100;
+
+		// Refine the magical damage damage to be received
+		else if (
+			asset_tags_
+				.HasTagExact(
+					FGameplayTag::RequestGameplayTag("damage.type.magical")
+				)
+		)
+			Data.EvaluatedData.Magnitude = Data.EvaluatedData.Magnitude * (100 - battle_attr_set_->Getmagic_resist()) / 100;
+
+		// else, do nothing, since pure damage is not blocked by magic_resist or armor
+
+		// else
+			// Data.EvaluatedData.Magnitude = Data.EvaluatedData.Magnitude;
+
+	}
+
+	if (Data.EvaluatedData.Attribute == Getstamina_metaAttribute())
+	{
+		const UBATTLE_attribute_set * battle_attr_set_ = Cast<UBATTLE_attribute_set>(
+			GetOwningAbilitySystemComponent()
+				->GetAttributeSet(UBATTLE_attribute_set::StaticClass())
+		);
+
+		if (!battle_attr_set_) return false;
+
+		FGameplayTagContainer asset_tags_;
+
+		Data.EffectSpec.GetAllAssetTags(asset_tags_);
+
+		// Refine the physical damage damage to be received
+		if (
+			asset_tags_
+				.HasTagExact(
+					FGameplayTag::RequestGameplayTag("damage.type.physical")
+				)
+		)
+			Data.EvaluatedData.Magnitude = Data.EvaluatedData.Magnitude * (100 - battle_attr_set_->Getarmor()) / 100;
+
+		// Refine the magical damage damage to be received
+		else if (
+			asset_tags_
+				.HasTagExact(
+					FGameplayTag::RequestGameplayTag("damage.type.magical")
+				)
+		)
+			Data.EvaluatedData.Magnitude = Data.EvaluatedData.Magnitude * (100 - battle_attr_set_->Getmagic_resist()) / 100;
+
+		// else, do nothing, since pure damage is not blocked by magic_resist or armor
+
+		// else
+			// Data.EvaluatedData.Magnitude = Data.EvaluatedData.Magnitude;
+
+	}
+
+	return true;
+
+}
+
 void UBASE_attribute_set::PostGameplayEffectExecute(const FGameplayEffectModCallbackData & Data)
 {
     Super::PostGameplayEffectExecute(Data);
+
+	// Do the damage/heal using the meta attribute set
+	if (Data.EvaluatedData.Attribute == Gethealth_metaAttribute())
+	{
+		Sethealth(FMath::Clamp(
+			Gethealth() + Gethealth_meta(),
+			0.f,
+			Getmax_health()
+		));
+
+		Sethealth_meta(0.f);
+	}
+
+	if (Data.EvaluatedData.Attribute == Getmana_metaAttribute())
+	{
+		Setmana(FMath::Clamp(
+			Getmana() + Getmana_meta(),
+			0.f,
+			Getmax_mana()
+		));
+
+		Setmana_meta(0.f);
+	}
+
+	if (Data.EvaluatedData.Attribute == Getstamina_metaAttribute())
+	{
+		Setstamina(FMath::Clamp(
+			Getstamina() + Getstamina_meta(),
+			0.f,
+			Getmax_stamina()
+		));
+
+		Setstamina_meta(0.f);
+	}
 
 	if (Data.EvaluatedData.Attribute == GethealthAttribute())
 		Sethealth(FMath::Clamp(Gethealth(), 0.f, Getmax_health()));

@@ -109,6 +109,8 @@ public:
 
 	virtual void PreAttributeChange(const FGameplayAttribute & attribute, float & new_value) override;
 
+	virtual bool PreGameplayEffectExecute(FGameplayEffectModCallbackData& Data) override;
+
 	virtual void PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data) override;
 
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
