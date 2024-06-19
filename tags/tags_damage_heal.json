@@ -1,0 +1,65 @@
+[
+	{
+		"Name": "element.air",
+		"Tag": "element.air",
+		"DevComment": "Air element"
+	},
+	{
+		"Name": "element.water",
+		"Tag": "element.water",
+		"DevComment": "Water element"
+	},
+	{
+		"Name": "element.fire",
+		"Tag": "element.fire",
+		"DevComment": "Fire element"
+	},
+
+	{
+		"Name": "element.earth",
+		"Tag": "element.earth",
+		"DevComment": "Earth element"
+	},
+	{
+		"Name": "element.electric",
+		"Tag": "element.electric",
+		"DevComment": "Electric element"
+	},
+	{
+		"Name": "element.void",
+		"Tag": "element.void",
+		"DevComment": "Void element"
+	},
+
+	{
+		"Name": "heal.fountain",
+		"Tag": "heal.fountain",
+		"DevComment": "Healing from fountain"
+	},
+	{
+		"Name": "damage",
+		"Tag": "damage",
+		"DevComment": "Basic Damage Tag"
+	},
+	{
+		"Name": "damage.periodic",
+		"Tag": "damage.periodic",
+		"DevComment": "Basic Damage Tag for periodic"
+	},
+
+	{
+		"Name": "damage.type.physical",
+		"Tag": "damage.type.physical",
+		"DevComment": "Physical Damage"
+	},
+	{
+		"Name": "damage.type.magical",
+		"Tag": "damage.type.magical",
+		"DevComment": "Magical Damage"
+	},
+	{
+		"Name": "damage.type.pure",
+		"Tag": "damage.type.pure",
+		"DevComment": "Pure Damage"
+	}
+]

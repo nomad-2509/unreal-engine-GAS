@@ -1,0 +1,22 @@
+[
+	{
+		"Name": "GameplayCue.parry",
+		"Tag": "GameplayCue.parry",
+		"DevComment": "On parrying an attack"
+	},
+	{
+		"Name": "GameplayCue.stun",
+		"Tag": "GameplayCue.stun",
+		"DevComment": "On being stunned"
+	},
+	{
+		"Name": "GameplayCue.root",
+		"Tag": "GameplayCue.root",
+		"DevComment": "On being rooted"
+	},
+	{
+		"Name": "GameplayCue.blink",
+		"Tag": "GameplayCue.blink",
+		"DevComment": "Cue for blinking abilities"
+	}
+]

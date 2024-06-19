@@ -83,3 +83,9 @@ enc_temp_folder
 
 ####
 .vsconfig
+*.code-workspace
+
+# ==========
+
+Content/Weapon_Pack/*
+Content/Paragon*

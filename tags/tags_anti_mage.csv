@@ -1,0 +1,9 @@
+"Name"," ""Tag"""," ""DevComment"""
+"hero.anti_mage.ability.blink",hero.anti_mage.ability.blink,"Anti-mage Blink Ability"
+"hero.anti_mage.ability.blink.cooldown",hero.anti_mage.ability.blink.cooldown,
+"hero.anti_mage.ability.blink.cost",hero.anti_mage.ability.blink.cost,
+"hero.anti_mage.ability.blink.effect",hero.anti_mage.ability.blink.effect,
+"hero.anti_mage.ability.mana_burn",hero.anti_mage.ability.mana_burn,"Anti-mage Mana-Burn Ability"
+"hero.anti_mage.ability.mana_burn.cooldown",hero.anti_mage.ability.mana_burn.cooldown,
+"hero.anti_mage.ability.mana_burn.cost",hero.anti_mage.ability.mana_burn.cost,
+"hero.anti_mage.ability.mana_burn.effect",hero.anti_mage.ability.mana_burn.effect,
